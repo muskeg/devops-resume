@@ -2,3 +2,5 @@ app/env/
 .env.prod
 .env.prod.db
 app/django_raph_dev
+.gitsecret/keys/random_seed
+!*.secret
