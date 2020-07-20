@@ -15,9 +15,7 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				nameserver 8.8.8.8
-				nameserver 8.8.4.4	
-
+				setup-dns  -n 8.8.8.8
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
 				apk update
