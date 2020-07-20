@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image 'alpine:latest'
+			image 'alpine:3.12'
 			args '-u root:root'
 		}
 	}
@@ -15,11 +15,8 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				cat > /etc/apk/repositories << EOF; \$(echo)
-				http://dl-cdn.alpinelinux.org/alpine/v\$(cat /etc/alpine-release | cut -d'.' -f1,2)/main
-				http://dl-cdn.alpinelinux.org/alpine/v\$(cat /etc/alpine-release | cut -d'.' -f1,2)/community
-				EOF
-
+				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
+				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
 				apk update
 				apk add docker git-secret
 				gpg --batch --import $GPG_SECRET_KEY
