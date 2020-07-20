@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image 'maven:3.6.3'
+			image 'maven:3.6.3-alpine'
 			args '-u root:root'
 		}
 	}
@@ -10,10 +10,10 @@ pipeline {
 	}
 
 	stages {
-		stage('Build') {
+		stage('Checkout and environment') {
 			steps {
 				echo "Building.."
-				// checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '44ba137d-05cd-4f39-8d38-cf15e4c03ec3', url: 'git@github.com:muskeg/devops-resume.git']]]) 
+				apk add git-secret
 				checkout scm
 				sh """
 				gpg --batch --import $GPG_SECRET_KEY
