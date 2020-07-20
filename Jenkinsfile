@@ -55,10 +55,10 @@ pipeline {
 	}
 	
 	post {
-		agent any
- 
 		always { 
-			cleanWs()
+			node('jenkins@muskegg') {
+				cleanWs()
+			}
 		}
 	}
 }
