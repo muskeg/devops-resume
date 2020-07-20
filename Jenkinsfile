@@ -14,7 +14,7 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				echo 'no-tty' >> ~/.gnupg/gpg.conf
 				cd $WORKSPACE
-				git secret reveal -p ''
+				git secret reveal -f -p ''
 				cat .env.prod
 				"""
                         }	
