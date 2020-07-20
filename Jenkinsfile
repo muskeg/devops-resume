@@ -15,7 +15,7 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				yum install docker git-secret
+				yum install -y docker git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
