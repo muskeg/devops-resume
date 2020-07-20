@@ -25,7 +25,8 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				docker ps
+				docker-compose -f docker-compose.prod.yaml build
+				docker images
 				"""
                         }	
         	}
