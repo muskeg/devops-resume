@@ -13,9 +13,9 @@ pipeline {
 		stage('Checkout and environment') {
 			steps {
 				echo "Building.."
-				apk add git-secret
 				checkout scm
 				sh """
+				apk add git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
