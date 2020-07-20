@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'alpine:3.12'
-			args '-u root:root --network host'
+			args '-u root:root --network host -v /var/run/docker.sock:/var/run/docker.sock'
 		}
 	}
 	environment {
@@ -25,7 +25,7 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				dockerd >/tmp/docker.stdout 2>/tmp/docker.stderr & docker ps
+				docker ps
 				"""
                         }	
         	}
