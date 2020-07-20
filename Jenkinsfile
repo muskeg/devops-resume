@@ -12,10 +12,10 @@ pipeline {
 				checkout scm
 				sh """
 				gpg --batch --import $GPG_SECRET_KEY
-                                cd $WORKSPACE
-                                git secret reveal
-                                cat .env.prod
-                                """
+				cd $WORKSPACE
+				git secret reveal -p ''
+				cat .env.prod
+				"""
                         }	
         	}
         
