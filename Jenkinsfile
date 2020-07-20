@@ -1,8 +1,8 @@
 pipeline {
 	agent {
 		docker {
-			image 'alpine:3.12'
-			args '-u root:root --dns 8.8.8.8'
+			image 'centos:centos8'
+			args '-u root:root'
 		}
 	}
 	environment {
@@ -15,16 +15,7 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				cat /etc/resolv.conf
-				echo -e "/ndots:0\nd\nw\nq" | ed /etc/resolv.conf 
-				cat /etc/resolv.conf
-				/etc/init.d/networking restart
-				ping -c4 8.8.8.8
-				ping -c4 google.com
-				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
-				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
-				apk update
-				apk add docker git-secret
+				yum install docker git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
