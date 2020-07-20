@@ -11,18 +11,11 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh echo "Building.."
+				echo "Building.."
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '44ba137d-05cd-4f39-8d38-cf15e4c03ec3', url: 'git@github.com:muskeg/devops-resume.git']]]) 
-			}
 
-			steps {
 				sh """
 				gpg --batch --import $GPG_SECRET_KEY
-				"""
-			}
-
-                        steps {
-                                sh """
                                 cd $WORKSPACE
                                 git secret reveal
                                 cat .env.prod
@@ -33,7 +26,7 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-				sh echo "Deploy.."
+				echo "Deploy.."
 			}
 		}
 	}
