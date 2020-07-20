@@ -16,6 +16,9 @@ pipeline {
 				checkout scm
 				sh """
 				cat /etc/resolv.conf
+				echo -e "/ndots:0\nd\nw\nq" | ed /etc/resolv.conf 
+				cat /etc/resolv.conf
+				/etc/init.d/networking restart
 				ping -c4 8.8.8.8
 				ping -c4 google.com
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
