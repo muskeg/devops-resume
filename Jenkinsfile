@@ -1,12 +1,13 @@
 pipeline {
-	agent any
-	environment {
-		GPG_SECRET_KEY = credentials('gpg-secret-key')
-	}
+	agent none
 
 	stages {
 		stage('Clean up') {
-			agent any
+                        agent {
+                                node {
+                                        label 'jenkins@muskegg'
+                                }
+                        }
 			steps {
 				cleanWs()
 			}
@@ -19,6 +20,9 @@ pipeline {
                         		args '-u root:root --network host -v ${PWD}:/usr/src/app -w /usr/src/app'
                 		}
         		}
+			environment {
+				GPG_SECRET_KEY = credentials('gpg-secret-key')
+			}
 			steps {
 				checkout scm
 				sh """
