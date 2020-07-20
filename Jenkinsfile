@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'alpine:3.12'
-			args '-u root:root'
+			args '-u root:root --dns 8.8.8.8'
 		}
 	}
 	environment {
@@ -15,7 +15,8 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				/sbin/setup-dns  -n 8.8.8.8
+				ping -c4 8.8.8.8
+				ping -c4 google.com
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
 				apk update
