@@ -25,7 +25,7 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				cat .env.prod
+				service docker start
 				"""
                         }	
         	}

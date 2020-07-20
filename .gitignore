@@ -4,3 +4,4 @@ app/env/
 app/django_raph_dev
 .gitsecret/keys/random_seed
 !*.secret
+Jenkinsfile.bak
