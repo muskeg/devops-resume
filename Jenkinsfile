@@ -15,6 +15,9 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
+				ping -c 4 8.8.8.8
+				ping -c 4 google.com
+
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
 				apk update
