@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image 'maven:3.6.3-alpine'
+			image 'alpine:latest'
 			args '-u root:root'
 		}
 	}
@@ -15,6 +15,7 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
+				apk add docker
 				apk add git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
