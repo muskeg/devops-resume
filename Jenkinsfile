@@ -21,11 +21,11 @@ pipeline {
 				echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories
 				echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 				apk update
-				apk add docker docker-compose gawk git git-secret
+				apk add openrc docker docker-compose gawk git git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				service docker start
+				rc-service docker start
 				"""
                         }	
         	}
