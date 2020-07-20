@@ -25,7 +25,7 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				docker ps
+				dockerd >/tmp/docker.stdout 2>/tmp/docker.stderr & docker ps
 				"""
                         }	
         	}
