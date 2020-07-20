@@ -27,8 +27,6 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				docker-compose -f docker-compose.prod.yaml up -d --build	
-				docker images
 				"""
                         }	
         	}
@@ -37,11 +35,11 @@ pipeline {
                 stage('Build') {
 			agent {
 				node { 
-					label 'labelName' 
+					label 'jenkins@muskegg' 
 				}
 			}
                         steps {
-
+				sh """
                                 cd $WORKSPACE
                                 docker-compose -f docker-compose.prod.yaml up -d --build
                                 docker images
