@@ -49,10 +49,10 @@ pipeline {
 			}
                         steps {
 				sh """
-                                cd $WORKSPACE
-                                docker-compose -f docker-compose.prod.yaml up -d --build
-                                docker images
-                                """
+				cd $WORKSPACE
+				/usr/local/bin/docker-compose -f docker-compose.prod.yaml up -d --build
+				docker images
+				"""
                         }
                 }
 
