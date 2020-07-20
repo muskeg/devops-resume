@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image 'centos:centos8'
+			image 'alpine:3.12'
 			args '-u root:root --network host'
 		}
 	}
@@ -15,11 +15,10 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				yum install -y yum-utils
-				yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-				yum install -y epel-release
-				yum install -y git-secret
-				yum install -y docker-ce --nobest
+				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
+				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
+				apk update
+				apk add docker git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
