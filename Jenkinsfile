@@ -15,8 +15,13 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
-				apk add docker
-				apk add git-secret
+				cat > /etc/apk/repositories << EOF; $(echo)
+				http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,2)/main
+				http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,2)/community
+				EOF
+
+				apk update
+				apk add docker git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
