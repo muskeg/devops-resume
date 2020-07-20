@@ -1,18 +1,20 @@
 pipeline {
-	agent {
-		docker {
-			image 'alpine:3.12'
-			args '-u root:root --network host -v /var/run/docker.sock:/var/run/docker.sock'
-		}
-	}
+	agent none
+
 	environment {
 		GPG_SECRET_KEY = credentials('gpg-secret-key')
 	}
 
 	stages {
-		stage('Checkout and environment') {
+		stage('Checkout and environment files') {
+        		agent {
+                		docker {
+                        		image 'alpine:3.12'
+                        		args '-u root:root --network host'
+                		}
+        		}
 			steps {
-				echo "Building.."
+				
 				checkout scm
 				sh """
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
@@ -21,7 +23,7 @@ pipeline {
 				echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories
 				echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 				apk update
-				apk add openrc docker docker-compose gawk git git-secret
+				apk add gawk git git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
@@ -31,6 +33,21 @@ pipeline {
                         }	
         	}
         
+
+                stage('Build') {
+			agent {
+				node { 
+					label 'labelName' 
+				}
+			}
+                        steps {
+
+                                cd $WORKSPACE
+                                docker-compose -f docker-compose.prod.yaml up -d --build
+                                docker images
+                                """
+                        }
+                }
 
 		stage('Deploy') {
 			steps {
