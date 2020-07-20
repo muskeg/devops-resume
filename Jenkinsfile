@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'centos:centos8'
-			args '-u root:root'
+			args '-u root:root --dns 8.8.8.8'
 		}
 	}
 	environment {
