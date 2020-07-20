@@ -6,7 +6,7 @@ pipeline {
 	}
 
 	stages {
-		stage('Checkout and environment files') {
+		stage('Cleanup, checkout, env files') {
         		agent {
                 		docker {
                         		image 'alpine:3.12'
@@ -15,6 +15,7 @@ pipeline {
         		}
 			steps {
 				
+				cleanWs()
 				checkout scm
 				sh """
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
@@ -54,11 +55,4 @@ pipeline {
 		}
 	}
 	
-	post {
-		always { 
-			node('jenkins@muskegg') {
-				cleanWs()
-			}
-		}
-	}
 }
