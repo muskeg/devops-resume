@@ -19,7 +19,7 @@ pipeline {
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
 				echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 				apk update
-				apk add docker git-secret
+				apk add docker git git-secret
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
