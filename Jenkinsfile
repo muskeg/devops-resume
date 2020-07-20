@@ -1,21 +1,25 @@
 pipeline {
-	agent none
-
+	agent any
 	environment {
 		GPG_SECRET_KEY = credentials('gpg-secret-key')
 	}
 
 	stages {
-		stage('Cleanup, checkout, env files') {
+		stage('Clean up') {
+			agent any
+			steps {
+				cleanWs()
+			}
+		}
+
+		stage('Checkout, env files') {
         		agent {
                 		docker {
                         		image 'alpine:3.12'
-                        		args '-u root:root --network host'
+                        		args '-u root:root --network host -v ${PWD}:/usr/src/app -w /usr/src/app'
                 		}
         		}
 			steps {
-				
-				cleanWs()
 				checkout scm
 				sh """
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
