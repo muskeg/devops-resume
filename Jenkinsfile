@@ -54,7 +54,9 @@ pipeline {
 		}
 	}
 	
-	post { 
+	post {
+		agent any
+ 
 		always { 
 			cleanWs()
 		}
