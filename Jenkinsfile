@@ -25,8 +25,7 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				touch /run/openrc/softlevel
-				rc-service docker status
+				docker ps
 				"""
                         }	
         	}
