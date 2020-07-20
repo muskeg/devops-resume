@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'centos:centos8'
-			args '-u root:root --network host -v /var/run/docker.sock:/var/run/docker.sock'
+			args '-u root:root --network host -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker-compose:/usr/local/bin/docker-compose'
 		}
 	}
 	environment {
@@ -20,7 +20,6 @@ pipeline {
 				yum install -y epel-release
 				yum install -y git-secret
 				yum install -y docker-ce --nobest
-				yum install -y docker-compose
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
