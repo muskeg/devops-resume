@@ -15,6 +15,7 @@ pipeline {
 				echo "Building.."
 				checkout scm
 				sh """
+				cat /etc/resolv.conf
 				ping -c4 8.8.8.8
 				ping -c4 google.com
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
