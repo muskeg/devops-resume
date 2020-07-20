@@ -17,7 +17,7 @@ pipeline {
 				sh """
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories
 				echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories
-				echo "http://nl.alpinelinux.org/alpine/edge/testing/x86_64/" >> /etc/apk/repositories
+				echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 				apk update
 				apk add docker git-secret
 				gpg --batch --import $GPG_SECRET_KEY
