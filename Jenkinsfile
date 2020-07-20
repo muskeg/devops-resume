@@ -25,7 +25,7 @@ pipeline {
 				gpg --batch --import $GPG_SECRET_KEY
 				cd $WORKSPACE
 				git secret reveal -f -p ''
-				rc-service docker start
+				rc-service docker status
 				"""
                         }	
         	}
