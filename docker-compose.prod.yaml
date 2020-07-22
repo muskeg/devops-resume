@@ -4,6 +4,7 @@ services:
   web:
     build: 
       context: ./app
+      network: host
       dockerfile: Dockerfile.prod
     command: gunicorn raph.wsgi:application --bind 0.0.0.0:8000
     volumes:
