@@ -50,8 +50,10 @@ pipeline {
                         steps {
 				sh """
 				cd $WORKSPACE
-				/usr/local/bin/docker-compose -f docker-compose.prod.yaml up -d --build
-				docker images
+				/usr/local/bin/docker-compose -f docker-compose.prod.yaml build
+				docker image
+				docker push registry.muskegg.com:5000/webresume:latest
+				docker push registry.muskegg.com:5000/webresume-nginx:latests
 				"""
                         }
                 }
