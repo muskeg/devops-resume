@@ -57,6 +57,11 @@ pipeline {
                 }
 
 		stage('Deploy') {
+                        agent {
+                                node {
+                                        label 'jenkins@muskegg'
+                                }
+                        }
 			steps {
 				echo "Deploy.."
 				withCredentials([usernamePassword(credentialsId: 'registry-muskegg', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
