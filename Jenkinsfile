@@ -52,8 +52,6 @@ pipeline {
 				cd $WORKSPACE
 				/usr/local/bin/docker-compose -f docker-compose.prod.yaml build
 				docker images
-				docker push registry.muskegg.com:5000/webresume:latest
-				docker push registry.muskegg.com:5000/webresume-nginx:latests
 				"""
                         }
                 }
@@ -61,6 +59,15 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo "Deploy.."
+				withCredentials([usernamePassword(credentialsId: 'registry-muskegg', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+  					sh 'docker login https://registry.muskegg.com:5000 -u $USERNAME -p $PASSWORD'
+				}
+				sh """
+}				docker push registry.muskegg.com:5000/webresume:latest
+				docker push registry.muskegg.com:5000/webresume-nginx:latests
+				"""
+
+
 			}
 		}
 	}
