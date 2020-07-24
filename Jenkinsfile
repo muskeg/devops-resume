@@ -68,11 +68,9 @@ pipeline {
   					sh 'docker login https://registry.muskegg.com:5000 -u $USERNAME -p $PASSWORD'
 				}
 				sh """
-}				docker push registry.muskegg.com:5000/webresume:latest
+				docker push registry.muskegg.com:5000/webresume:latest
 				docker push registry.muskegg.com:5000/webresume-nginx:latests
 				"""
-
-
 			}
 		}
 	}
