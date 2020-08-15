@@ -69,7 +69,7 @@ pipeline {
 				}
 				sh """
 				docker push registry.muskegg.com:5000/webresume:latest
-				docker push registry.muskegg.com:5000/webresume-nginx:latests
+				docker push registry.muskegg.com:5000/webresume-nginx:latest
 				"""
 			}
 		}
