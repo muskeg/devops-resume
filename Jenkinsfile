@@ -81,6 +81,7 @@ pipeline {
         			remote.user = $sshUser
         			remote.password = $sshPassword
 				sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config apply -f /home/pi/k8s/muskegg-app/deploy.yml'
+				}
 			}
 		}
 	}
