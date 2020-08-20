@@ -75,7 +75,13 @@ pipeline {
 				docker push registry.muskegg.com:5000/webresume-nginx:latest
 				"""
 				echo "Applying Kubernetes Deployment"
-				sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config apply -f /home/pi/k8s/muskegg-app/deploy.yml'
+				script {
+        				def remote = [:]
+        				remote.name = "kubernetes-master"
+        				remote.host = "pi.home.muskegg.com"
+        				remote.allowAnyHosts = true
+					sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config apply -f /home/pi/k8s/muskegg-app/deploy.yml'
+				}
 			}
 		}
 	}
