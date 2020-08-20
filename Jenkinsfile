@@ -60,12 +60,12 @@ pipeline {
                         agent {
                                 node {
                                         label 'jenkins@muskegg'
+                        		def remote = [:]
+                        		remote.name = "kubernetes-master"
+                        		remote.host = "pi.home.muskegg.com"
+                        		remote.allowAnyHosts = true
                                 }
                         }
-			def remote = [:]
-                        remote.name = "kubernetes-master"
-                        remote.host = "pi.home.muskegg.com"
-                        remote.allowAnyHosts = true
 			steps {
 				echo "Deploy.."
 				withCredentials([usernamePassword(credentialsId: 'registry-muskegg', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
