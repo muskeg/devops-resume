@@ -76,11 +76,11 @@ pipeline {
         				remote.name = "kubernetes-master"
         				remote.host = "pi.home.muskegg.com"
         				remote.allowAnyHosts = true
-				}
-				withCredentials([usernamePassword(credentialsId: 'ssh-k8s-master', passwordVariable: 'sshPassword', usernameVariable: 'sshUser')]) {
-        			remote.user = $sshUser
-        			remote.password = $sshPassword
-				sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config apply -f /home/pi/k8s/muskegg-app/deploy.yml'
+					withCredentials([usernamePassword(credentialsId: 'ssh-k8s-master', passwordVariable: 'sshPassword', usernameVariable: 'sshUser')]) {
+        				remote.user = sshUser
+        				remote.password = sshPassword
+					sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config apply -f /home/pi/k8s/muskegg-app/deploy.yml'
+					}
 				}
 			}
 		}
