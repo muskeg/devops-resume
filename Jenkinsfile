@@ -1,6 +1,9 @@
 pipeline {
 	agent none
-
+        def remote = [:]
+        remote.name = "kubernetes-master"
+        remote.host = "pi.home.muskegg.com"
+        remote.allowAnyHosts = true
 	stages {
 		stage('Clean up') {
                         agent {
@@ -60,10 +63,6 @@ pipeline {
                         agent {
                                 node {
                                         label 'jenkins@muskegg'
-                        		def remote = [:]
-                        		remote.name = "kubernetes-master"
-                        		remote.host = "pi.home.muskegg.com"
-                        		remote.allowAnyHosts = true
                                 }
                         }
 			steps {
