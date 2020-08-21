@@ -13,7 +13,7 @@ fi
 
 python /home/app/web/manage.py migrate --noinput
 python /home/app/web/manage.py collectstatic --no-input
-cp -r ./raph/static/ ./static/
+cp -r ./raph/static/. ./static/
 /usr/local/bin/gunicorn raph.wsgi:application --bind 0.0.0.0:8000
 
 
