@@ -81,7 +81,6 @@ pipeline {
 					withCredentials([usernamePassword(credentialsId: 'ssh-k8s-master', passwordVariable: 'sshPassword', usernameVariable: 'sshUser')]) {
         				remote.user = sshUser
         				remote.password = sshPassword
-					set image deployment/my-deployment mycontainer=myimage:"1.$BUILD_NUMBER"
 					sshCommand remote: remote, command: 'kubectl set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${BUILD_NUMBER} web=registry.muskegg.com:5000/webresume-nginx:1.${BUILD_NUMBER}'
 					}
 				}
