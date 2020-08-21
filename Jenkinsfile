@@ -74,7 +74,7 @@ pipeline {
 				"""
 				echo "Applying Kubernetes Deployment"
 				script {
-					def build_version = "1.env.BUILD_NUMBER"
+					def build_version = env.BUILD_NUMBER
         				def remote = [:]
         				remote.name = "kubernetes-master"
         				remote.host = "pi.home.muskegg.com"
@@ -82,7 +82,8 @@ pipeline {
 					withCredentials([usernamePassword(credentialsId: 'ssh-k8s-master', passwordVariable: 'sshPassword', usernameVariable: 'sshUser')]) {
         				remote.user = sshUser
         				remote.password = sshPassword
-					sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:${build_version} web=registry.muskegg.com:5000/webresume-nginx:${build_version}'
+					echo "kubectl --kubeconfig=/home/pi/.kube/config set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${build_version} web=registry.muskegg.com:5000/webresume-nginx:1.${build_version}"
+					sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${build_version} web=registry.muskegg.com:5000/webresume-nginx:1.${build_version}'
 					}
 				}
 			}
