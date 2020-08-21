@@ -69,8 +69,8 @@ pipeline {
   					sh 'docker login https://registry.muskegg.com:5000 -u $USERNAME -p $PASSWORD'
 				}
 				sh """
-				docker push registry.muskegg.com:5000/webresume:1.${BUILD_NUMBER}
-				docker push registry.muskegg.com:5000/webresume-nginx:1.${BUILD_NUMBER}
+				docker push registry.muskegg.com:5000/webresume
+				docker push registry.muskegg.com:5000/webresume-nginx
 				"""
 				echo "Applying Kubernetes Deployment"
 				script {
