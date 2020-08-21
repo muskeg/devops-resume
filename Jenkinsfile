@@ -83,7 +83,7 @@ pipeline {
         				remote.user = sshUser
         				remote.password = sshPassword
 					echo "kubectl --kubeconfig=/home/pi/.kube/config set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${build_version} web=registry.muskegg.com:5000/webresume-nginx:1.${build_version}"
-					sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${build_version} web=registry.muskegg.com:5000/webresume-nginx:1.${build_version}'
+					sshCommand remote: remote, command: "kubectl --kubeconfig=/home/pi/.kube/config set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${build_version} web=registry.muskegg.com:5000/webresume-nginx:1.${build_version}"
 					}
 				}
 			}
