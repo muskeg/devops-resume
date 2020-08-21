@@ -50,6 +50,8 @@ pipeline {
 				sh """
 				cd $WORKSPACE
 				/usr/local/bin/docker-compose -f docker-compose.prod.yaml build
+				docker tag registry.muskegg.com:5000/webresume:latest registry.muskegg.com:5000/webresume:1.${BUILD_NUMBER} 
+				docker tag registry.muskegg.com:5000/webresume-nginx:latest registry.muskegg.com:5000/webresume-nginx:1.${BUILD_NUMBER} 
 				docker images
 				"""
                         }
@@ -67,8 +69,8 @@ pipeline {
   					sh 'docker login https://registry.muskegg.com:5000 -u $USERNAME -p $PASSWORD'
 				}
 				sh """
-				docker push registry.muskegg.com:5000/webresume:latest
-				docker push registry.muskegg.com:5000/webresume-nginx:latest
+				docker push registry.muskegg.com:5000/webresume:1.${BUILD_NUMBER}
+				docker push registry.muskegg.com:5000/webresume-nginx:1.${BUILD_NUMBER}
 				"""
 				echo "Applying Kubernetes Deployment"
 				script {
@@ -79,7 +81,8 @@ pipeline {
 					withCredentials([usernamePassword(credentialsId: 'ssh-k8s-master', passwordVariable: 'sshPassword', usernameVariable: 'sshUser')]) {
         				remote.user = sshUser
         				remote.password = sshPassword
-					sshCommand remote: remote, command: 'kubectl --kubeconfig=/home/pi/.kube/config apply -f /home/pi/k8s/muskegg-app/deploy.yml'
+					set image deployment/my-deployment mycontainer=myimage:"1.$BUILD_NUMBER"
+					sshCommand remote: remote, command: 'kubectl set image deployment muskegg-deployment app=registry.muskegg.com:5000/webresume:1.${BUILD_NUMBER} web=registry.muskegg.com:5000/webresume-nginx:1.${BUILD_NUMBER}'
 					}
 				}
 			}
