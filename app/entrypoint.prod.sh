@@ -12,7 +12,7 @@ then
 fi
 
 python manage.py migrate --noinput
-python manage.py collectfiles --no-input
+python manage.py collectstatic --no-input
 cp -r ./raph/static ./static
 exec "$@"
 
