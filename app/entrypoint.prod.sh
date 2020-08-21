@@ -13,7 +13,6 @@ fi
 
 python /home/app/web/manage.py migrate --noinput
 python /home/app/web/manage.py collectstatic --no-input
-cp -r ./raph/static/. ./static/
 exec "$@"
 
 
