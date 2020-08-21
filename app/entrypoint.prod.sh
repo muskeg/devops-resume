@@ -11,6 +11,9 @@ then
     echo "PostgreSQL started"
 fi
 
+python manage.py migrate --noinput
+python manage.py collectfiles --no-input
+cp -r ./raph/static ./static
 exec "$@"
 
 
