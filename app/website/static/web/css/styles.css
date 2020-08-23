@@ -2,11 +2,11 @@ body {
   background-color: #1c1c1c;
   color: #ededed;
   font-family: 'Hind', sans-serif;
-  font-size: 1.2vw;
+  font-size: 1.25vw;
 }
 
 h1 {
-  font-size: 1.75vw;
+  font-size: 2.5vw;
   margin: 3.5vh 0 1.5vh 0;
 }
 
@@ -32,10 +32,26 @@ h1 {
 }
 
 #content {
+
+}
+
+.section {
+  background-color: #fafafa;
+  color: #c3c3c3;
+  width: 100%;
+}
+
+.section_text {
   width: 97.5vw;
   margin: auto;
 }
 
-.section {
+#footer {
+  height: 30vh;
+  text-align: center;
+  padding: 10vh;
+}
 
+#footer_copyright {
+  font-size: 0.75vh;
 }

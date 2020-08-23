@@ -10,10 +10,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-{% block content %}
-  <!-- content block --> 
-{% endblock %}
-<script src="{% static 'web/scripts/main.js' %}"></script>
+  {% block content %}
+    <!-- content block --> 
+  {% endblock %}
+
+  <div id="footer">
+    <div id="footer_text">
+	{{ footer_text }}
+    </div>
+    <div id="footer_copyright">&copy; {% now 'Y' %}, Raphael Lanouette</div>
+  </div>
+  <script src="{% static 'web/scripts/main.js' %}"></script>
 </body>
 </html>
 
