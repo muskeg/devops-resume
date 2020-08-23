@@ -1,6 +1,6 @@
 body {
   background-color: #1c1c1c;
-  color: #ededed;
+  color: #f4f4f4;
   font-family: 'Hind', sans-serif;
   font-size: 2.25vw;
 }
@@ -22,13 +22,13 @@ h1 {
 }
 
 #header_title {
-  font-size: 12em;
+  font-size: 7em;
 }
 
 #header_subtitle {
-  font-size: 2em;
-  margin-top: -1.2em;
-  margin-left: 0.35em;
+  font-size: 1em;
+  margin-top: -1.5em;
+  margin-left: 0.4em;
 }
 
 #content {
