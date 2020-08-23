@@ -2,11 +2,11 @@ body {
   background-color: #1c1c1c;
   color: #ededed;
   font-family: 'Hind', sans-serif;
-  font-size: 1.25vw;
+  font-size: 2.25vw;
 }
 
 h1 {
-  font-size: 2.5vw;
+  font-size: 4.5vw;
   margin: 3.5vh 0 1.5vh 0;
 }
 
@@ -37,8 +37,9 @@ h1 {
 
 .section {
   background-color: #fafafa;
-  color: #c3c3c3;
+  color: #3c3c3c;
   width: 100%;
+  padding: 1vh 0 5vh 0;
 }
 
 .section_text {
@@ -53,5 +54,5 @@ h1 {
 }
 
 #footer_copyright {
-  font-size: 0.75vh;
+  font-size: 1.1vw;
 }
