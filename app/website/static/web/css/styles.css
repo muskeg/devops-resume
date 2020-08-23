@@ -11,5 +11,6 @@ h1 {
 }
 
 #content {
-  padding: 0.65vw;
+  width: 90vw;
+  margin: auto;
 }
