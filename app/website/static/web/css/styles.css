@@ -10,6 +10,16 @@ h1 {
   margin: 3.5vh 0 1.5vh 0;
 }
 
+@media screen and (min-width: 900px) {
+  body {
+     font-size: 1.25vw;
+  }
+
+  h1 {
+    font-size: 3.5vw;
+  }
+}
+
 #header {
   height: 70vh;
   width: 100%;
@@ -22,13 +32,13 @@ h1 {
 }
 
 #header_title {
-  font-size: 7em;
+  font-size: 16vw;
 }
 
 #header_subtitle {
-  font-size: 1em;
-  margin-top: -1.5em;
-  margin-left: 0.4em;
+  font-size: 2.5vw;
+  margin-top: -3.5vw;
+  margin-left: 1vw;
 }
 
 #content {
