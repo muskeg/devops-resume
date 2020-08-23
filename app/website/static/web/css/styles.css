@@ -2,9 +2,14 @@ body {
   background-color: #1c1c1c;
   color: #ededed;
   font-family: 'Hind', sans-serif;
-  font-size: 0.75vw;
+  font-size: 1vw;
 }
 
 h1 {
   font-size: 1.5vw;
+  margin: 3.5vh 0 1.5vh 0;
+}
+
+#content {
+  padding: 0.65vw;
 }
