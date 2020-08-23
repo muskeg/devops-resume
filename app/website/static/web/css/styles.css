@@ -2,15 +2,36 @@ body {
   background-color: #1c1c1c;
   color: #ededed;
   font-family: 'Hind', sans-serif;
-  font-size: 1vw;
+  font-size: 1.2vw;
 }
 
 h1 {
-  font-size: 1.5vw;
+  font-size: 1.75vw;
   margin: 3.5vh 0 1.5vh 0;
 }
 
-#content {
-  width: 98vw;
+#header {
+  height: 100vw;
+}
+
+#header_text {
+  width: 50%;
   margin: auto;
+}
+
+#header_title {
+  font-size: 3em;
+}
+
+#header_subtitle {
+  font-size: 1em;
+}
+
+#content {
+  width: 97.5vw;
+  margin: auto;
+}
+
+.section {
+
 }

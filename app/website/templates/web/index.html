@@ -1,8 +1,17 @@
 {% extends "web/base.html" %}
 
 {% block content %}
+  <div id="header">
+    <div id="header_text">
+      <div id="head_title">muskegg.com</div>
+      <div id="head_subtitle">an online CV and portfolio </div>
+   </div>
+   
+  </div>
   <div id="content">
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
+    <div class="section" id="section-website">
+      <h1>{{ section-title }}</h1>
+      <p>{{ description }}</p>
+    </div>
   </div>
 {% endblock %}
