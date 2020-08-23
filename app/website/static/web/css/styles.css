@@ -11,20 +11,23 @@ h1 {
 }
 
 #header {
-  height: 100vw;
+  height: 70vh;
 }
 
 #header_text {
   width: 50%;
   margin: auto;
+  margin-top: 30vh;
 }
 
 #header_title {
-  font-size: 3em;
+  font-size: 12em;
 }
 
 #header_subtitle {
-  font-size: 1em;
+  font-size: 2em;
+  margin-top: -1.2em;
+  margin-left: 0.35em;
 }
 
 #content {
