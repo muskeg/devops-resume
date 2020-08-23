@@ -12,10 +12,11 @@ h1 {
 
 #header {
   height: 70vh;
+  width: 100%;
 }
 
 #header_text {
-  width: 50%;
+  width: 97.5vw;
   margin: auto;
   margin-top: 30vh;
 }
