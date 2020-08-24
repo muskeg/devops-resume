@@ -1,8 +1,12 @@
 body {
-  background-color: #1c1c1c;
+  background-color: #0f0f0f;
   color: #f4f4f4;
   font-family: 'Hind', sans-serif;
   font-size: 2.25vw;
+}
+
+p {
+  margin: 1.25vh 0;
 }
 
 h1 {
@@ -13,7 +17,7 @@ h1 {
 
 @media screen and (min-width: 900px) {
   body {
-     font-size: 1.25vw;
+     font-size: 1.5vw;
   }
 
   h1 {
@@ -24,6 +28,12 @@ h1 {
 #header {
   height: 70vh;
   width: 100%;
+}
+
+#header_content {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 #header_text {
@@ -43,7 +53,27 @@ h1 {
 }
 
 #content {
+  font-weight: 100;
+}
 
+#content_nav {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  font-size: 2vw;
+  font-weight: 100;
+  font-variant: all-small-caps;	
+  background-color: #1b1b1b;
+}
+
+#content_nav a {
+  text-decoration: underline;
+  color: #f4f4f4;
+}
+
+#content_nav div {
+  display: inline-block;
+  margin: 1vh 1vw;
 }
 
 .section {
@@ -54,12 +84,12 @@ h1 {
 }
 
 .section_text {
-  width: 97.5vw;
+  width: 96vw;
   margin: auto;
 }
 
 #footer {
-  height: 30vh;
+  height: 100vh;
   text-align: center;
   padding: 10vh;
 }
