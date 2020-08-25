@@ -31,8 +31,8 @@ h1 {
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: 3.25vw;
-  padding: 1.5vw;
+  font-size: 4vw;
+  padding: 5vw;
   -webkit-transition: all 0.45s ease;
   -moz-transition: all 0.45s ease;
   -o-transition: all 0.45s ease;
@@ -126,6 +126,7 @@ h1 {
   }
 
   #header {
+    padding: 1.5vw;
     font-size: 1.25vw;
   }
 

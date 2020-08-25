@@ -2,6 +2,7 @@ app/env/
 .env.prod
 .env.prod.db
 app/django_raph_dev
+app/static
 .gitsecret/keys/random_seed
 !*.secret
 Jenkinsfile.bak
