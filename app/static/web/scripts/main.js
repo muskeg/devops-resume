@@ -8,11 +8,12 @@ $(window).on('beforeunload', function() {
 
 $(window).scroll(function(){
     var scroll_length = $(document).scrollTop();
-    if (scroll_length > ($(window).height() * 0.075)) {
-      $( "#header" ).addClass("header_background");
-    }
-    else {
-      $( "#header" ).removeClass("header_background");
+    if (scroll_length > ($(window).height() * 0.75)) {
+      $( "#header" ).animate({
+        backgroundColor: "#010101"
+      }, 500, "linear", function() {
+        $('#header_nav').fadeIn(200);
+      });
     }
     var title_margin = $(window).height() * 0.30;
     var title_size = $(window).width() * 0.16;

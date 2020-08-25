@@ -6,7 +6,7 @@ body {
   background-color: #0f0f0f;
   color: #f4f4f4;
   font-family: 'Hind', sans-serif;
-  font-size: 2.4 vw;
+  font-size: 2.25vw;
   background-image: url(../img/tanker_bg.jpg);
   background-repeat: no-repeat;
   background-position: center; 
@@ -27,25 +27,22 @@ h1 {
   margin: 3.5vh 0 1.5vh 0;
 }
 
+@media screen and (min-width: 900px) {
+  body {
+     font-size: 1.25vw;
+  }
+
+  h1 {
+    font-size: 3.5vw;
+  }
+}
+
 #header {
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: 3.25vw;
+  font-size: 1.25vw;
   padding: 1.5vw;
-  -webkit-transition: all 0.45s ease;
-  -moz-transition: all 0.45s ease;
-  -o-transition: all 0.45s ease;
-  transition: all 0.45s ease;
-}
-
-#header_title {
-  display: inline-block;
-  font-size: 4vw; 
-}
-
-.header_background {
-  background-color: #030303;
 }
 
 #header_content {
@@ -56,13 +53,18 @@ h1 {
 
 }
 
+#header_title {
+  display: inline-block;
+  width: 15vw;
+  font-size: 2vw;
+}
+
 #header_subtitle {
 
 }
 
 #header_nav {  
   display: inline-block;
-  margin-left: 2vw;
 }
 
 #header_nav a {
@@ -72,22 +74,21 @@ h1 {
 
 #header_nav div {
   display: inline;
-  margin: 1vh 2vw;
+  margin: 1vh 1vw;
 }
 
 #content {
   font-weight: 100;
-  width: 100%;
 }
 
 #content_intro {
-  height: 55vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   font-size: 16vw;
 }
 
 #intro_text {
-  margin: 45vh auto 0 auto;
+  margin: 40vh auto 0 auto;
   width: 50vw;
   font-size: 5vw;
   font-weight: bold;
@@ -101,7 +102,7 @@ h1 {
 }
 
 .section_text {
-  width: 94vw;
+  width: 96vw;
   margin: auto;
 }
 
@@ -113,49 +114,5 @@ h1 {
 }
 
 #footer_copyright {
-  font-size: 3vw;
-}
-
-@media screen and (min-width: 900px) {
-  body {
-     font-size: 1.45vw;
-  }
-
-  h1 {
-    font-size: 3.5vw;
-  }
-
-  #header {
-    font-size: 1.25vw;
-  }
-
-  #header_title {
-    font-size: 2vw;
-  }
-
-  #footer_copyright {
-    font-size: 1.35vw;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  body {
-     font-size: 1vw;
-  }
-
-  h1 {
-    font-size: 2.5vw;
-  }
-
-  #header {
-    font-size: 1vw;
-  }
-
-  #header_title {
-    font-size: 1.5vw;
-  }
-
-  #footer_copyright {
-    font-size: 0.85vw;
-  }
+  font-size: 1.1vw;
 }
