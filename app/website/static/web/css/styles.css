@@ -1,13 +1,5 @@
 html {
   background-color: #0f0f0f;
-  background-image: url(../img/tanker_bg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 body {
@@ -34,6 +26,22 @@ h1 {
   h1 {
     font-size: 3.5vw;
   }
+}
+
+#fixed_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/tanker_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
 }
 
 #header {
