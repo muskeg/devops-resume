@@ -1,5 +1,12 @@
 html {
   background-color: #0f0f0f;
+  background-image: url(../img/tanker_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
@@ -26,6 +33,7 @@ h1 {
   h1 {
     font-size: 3.5vw;
   }
+<<<<<<< HEAD
 }
 
 #fixed_background {
@@ -37,6 +45,9 @@ h1 {
 
   z-index: -1;
 }
+=======
+} 
+>>>>>>> 8b6d9d18b94d1361cd854b414e7f1bfa3f4b3a6f
 
 #header {
   position: fixed;
@@ -50,7 +61,13 @@ h1 {
 }
 
 #header_text {
+<<<<<<< HEAD
 
+=======
+  width: 97.5vw;
+  margin: auto;
+  margin-top: 30vh;
+>>>>>>> 8b6d9d18b94d1361cd854b414e7f1bfa3f4b3a6f
 }
 
 #header_title {
