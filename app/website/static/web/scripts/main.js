@@ -1,5 +1,5 @@
 $(function() {
-  
+
 });
 
 $(window).on('beforeunload', function() {
@@ -9,6 +9,12 @@ $(window).on('beforeunload', function() {
 /*
 $(window).scroll(function(){
     var scroll_length = $(document).scrollTop();
+    $( "#header_title" ).animate({
+      fontSize: "3vw"
+      }, 500, "linear", function() {
+      $('#header_nav').fadeIn(200);
+    });
+
     var title_margin = $(window).height() * 0.30;
     var title_size = $(window).width() * 0.16;
     var header_height = $(window).height() * 0.70;

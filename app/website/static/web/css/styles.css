@@ -1,5 +1,16 @@
-body {
+html {
   background-color: #0f0f0f;
+  background-image: url(../img/tanker_bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
   color: #f4f4f4;
   font-family: 'Hind', sans-serif;
   font-size: 2.25vw;
@@ -89,6 +100,7 @@ h1 {
 }
 
 #footer {
+  background-color: #0f0f0f;
   height: 100vh;
   text-align: center;
   padding: 10vh;
