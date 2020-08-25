@@ -34,66 +34,63 @@ h1 {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url(../img/tanker_bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
   z-index: -1;
 }
 
 #header {
-  height: 70vh;
+  position: fixed;
+  top: 0;
+  height: 10vh;
   width: 100%;
 }
 
 #header_content {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+
 }
 
 #header_text {
-  width: 97.5vw;
-  margin: auto;
-  margin-top: 30vh;
-  padding-bottom: 5vh;
+
 }
 
 #header_title {
-  font-size: 16vw;
+  display: inline-block;
+  width: 10vw;
 }
 
 #header_subtitle {
-  font-size: 2.5vw;
-  margin-top: -3.5vw;
-  margin-left: 1vw;
+
+}
+
+#header_nav {  
+  display: inline-block;
+  font-size: 2vw;
+  font-weight: 100;
+  width: 80vw;
+}
+
+#header_nav a {
+  text-decoration: underline;
+  color: #f4f4f4;
+}
+
+#header_nav div {
+  display: inline;
+  margin: 1vh 1vw;
 }
 
 #content {
   font-weight: 100;
 }
 
-#content_nav {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  font-size: 2vw;
-  font-weight: 100;
-  font-variant: all-small-caps;	
-  background-color: #1b1b1b;
+#content_intro {
+  height: 100vh;
+  width: 100vw;
 }
 
-#content_nav a {
-  text-decoration: underline;
-  color: #f4f4f4;
-}
-
-#content_nav div {
-  display: inline-block;
-  margin: 1vh 1vw;
+#intro_text {
+  margin: 30vh auto 0 auto;
+  width: 10vw;
 }
 
 .section {
