@@ -8,7 +8,7 @@ $(window).on('beforeunload', function() {
 
 $(window).scroll(function(){
     var scroll_length = $(document).scrollTop();
-    if (scroll_length > ($(window).height() * 0.075)) {
+    if (scroll_length > ($(window).height() * 0.025)) {
       $( "#header" ).addClass("header_background");
     }
     else {

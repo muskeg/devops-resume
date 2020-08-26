@@ -6,3 +6,4 @@ app/static
 .gitsecret/keys/random_seed
 !*.secret
 Jenkinsfile.bak
+.vscode
