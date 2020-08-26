@@ -64,7 +64,7 @@ a.anchor {
 }
 
 .header_background {
-  background-color: #030303;
+  background-color: rgba(3, 3, 3, 0.97);
 }
 
 #header_content {
