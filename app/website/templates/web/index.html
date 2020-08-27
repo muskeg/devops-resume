@@ -1,6 +1,6 @@
 {% extends "web/base.html" %}
 {% load paragraphs %} 
-
+{% load static %}
 {% block content %}
   <div id="header">
     <div id="header_content">
@@ -21,8 +21,17 @@
       <a class="anchor" name="raph"></a>
       <a class="anchor" name="projects"></a>
       <div class="section_text">
-        <h1>{{ section_title }}</h1>
-        <p>{{ section_text|paragraphs|safe }}</p>
+        <h1>{{ section_pipeline_title }}</h1>
+        <div id="pipeline_intro" class="content_text">
+          {{ section_pipeline_intro|paragraphs|safe }}
+        </div>
+        <h2>{{ section_pipeline_subtitle }}</h2>
+        <div id="pipeline_diagram">
+          <img id="pipeline_diagram_img" src="{% static 'web/img/pipeline-diagram.png' %}" />
+        </div>
+        <div id="pipeline_pipeline" class="content_text">
+          {{ section_pipeline_pipeline|paragraphs|safe }}
+        </div>
       </div>
     </div>
   </div>

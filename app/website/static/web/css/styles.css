@@ -27,6 +27,12 @@ h1 {
   margin: 3.5vh 0 1.5vh 0;
 }
 
+h2 {
+  font-variant: all-small-caps;	
+  font-size: 3.5vw;
+  margin: 2.5vh 0 1.5vh 0;
+}
+
 a.anchor {
   display: block;
   position: relative;
@@ -124,6 +130,17 @@ a.anchor {
   margin: auto;
 }
 
+#pipeline_diagram {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+
+#pipeline_diagram_img {
+  max-width:100%;
+  max-height:100%;
+}
+
 #footer {
   background-color: #0f0f0f;
   height: 100vh;
@@ -142,6 +159,10 @@ a.anchor {
 
   h1 {
     font-size: 3.5vw;
+  }
+
+  h2 {
+    font-size: 3vw;
   }
 
   a.anchor {
@@ -173,6 +194,10 @@ a.anchor {
 
   h1 {
     font-size: 2.5vw;
+  }
+
+  h2 {
+    font-size: 2vw;
   }
 
   #header {
