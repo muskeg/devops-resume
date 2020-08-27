@@ -120,7 +120,7 @@ a.anchor {
 }
 
 .section_text {
-  width: 94vw;
+  width: 90vw;
   margin: auto;
 }
 
@@ -135,9 +135,9 @@ a.anchor {
   font-size: 3vw;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width:720px) {
   body {
-     font-size: 1.45vw;
+     font-size: 1.75vw;
   }
 
   h1 {
@@ -150,11 +150,15 @@ a.anchor {
 
   #header {
     padding: 1.5vw;
-    font-size: 1.25vw;
+    font-size: 1.75vw;
   }
 
   #header_title {
     font-size: 2vw;
+  }
+
+  .section_text {
+    width: 70vw;
   }
 
   #footer_copyright {
@@ -162,7 +166,7 @@ a.anchor {
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1100px) {
   body {
      font-size: 1vw;
   }
@@ -172,7 +176,8 @@ a.anchor {
   }
 
   #header {
-    font-size: 1vw;
+    padding: 1vw;
+    font-size: 1.25vw;
   }
 
   #header_title {
