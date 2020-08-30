@@ -16,14 +16,13 @@ def index(request):
     You can find the whole project on Github: <a href="https://github.com/muskeg/muskegg-dot-com">https://github.com/muskeg/muskegg-dot-com</a>
     """
     section_pipeline_app_title = "the app"
-    section_pipeline_app = """So instead of a “new feature” I created a simple Django project. I didn’t know much about Django at the time, but I like Python and thought it would be great to play with something new. At this time, the project has an admin interface app doing nothing and a website app which is the static page you’re seeing now. 
+    section_pipeline_app = """So instead of a “new feature” I created a simple Django project. I didn’t know much about Django at the time, but I like Python and thought it would be great to play with something new. At this time, the project has an admin interface app doing nothing and a website app which is the static page you’re seeing now.
     """
     section_pipeline_jenkins_title = "Jenkins"
-    section_pipeline_jenkins = """I also wanted to experience more with declarative pipelines in Jenkins so I quickly setup a server to handle builds. Using Github’s webhooks, a commit will trigger a build. Jenkins will pull the code from Github and then use docker-compose to build the app’s images (the app, the database, and an NGINX reverse proxy). The plan is to use docker-compose to run the app and implement further testing in the future. But at the moment, I’m only validating that the Python code is properly linted with Flake8. Once the images are built, Jenkins tags them with a version tag before pushing them to a private Docker registry. 
+    section_pipeline_jenkins = """I also wanted to experience more with declarative pipelines in Jenkins so I quickly setup a server to handle builds. Using Github’s webhooks, a commit will trigger a build. Jenkins will pull the code from Github and then use docker-compose to build the app’s images (the app, the database, and an NGINX reverse proxy). The plan is to use docker-compose to run the app and implement further testing in the future. But at the moment, I’m only validating that the Python code is properly linted with Flake8. Once the images are built, Jenkins tags them with a version tag before pushing them to a private Docker registry.
     """
     section_pipeline_deploy_title = "Deployment"
-    section_pipeline_deploy = """Once the images are tagged and pushed, Jenkins tells my master Kubernetes node to update the Django app to the version it just built. The Kubernetes “cluster” is currently just 2 nodes running on Rancher’s k3s on servers I manage. Since the cluster is provisioned with Ansible, adding new nodes only takes a few minutes. 
-    Since the app is not running in a traditional cloud environment, I decided to use a self-provisioned public edge proxy that will forward all http traffic to the cluster.
+    section_pipeline_deploy = """Once the images are tagged and pushed, Jenkins tells my master Kubernetes node to update the Django app to the version it just built. The Kubernetes “cluster” is currently just 2 nodes running on Rancher’s k3s on servers I manage. Since the cluster is provisioned with Ansible, adding new nodes only takes a few minutes. Since the app is not running in a traditional cloud environment, I decided to use a self-provisioned public edge proxy that will forward all http traffic to the cluster.
     """
     content = {
         'section_pipeline_title': section_pipeline_title,
