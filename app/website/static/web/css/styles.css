@@ -152,6 +152,7 @@ a.anchor {
 
   h1 {
     font-size: 3.5vw;
+    margin: 6vh 0 3vh 0;
   }
 
   h2 {
@@ -173,6 +174,22 @@ a.anchor {
 
   .section_text {
     width: 70vw;
+  }
+
+  #raph_photo {
+    background-color: #4b4e20;
+    padding: 1%;
+    width: 30vw;
+    float: right;
+    margin: 2vh 2vw;
+  }
+
+  #raph_photo img {
+    width: 100%;
+  }
+
+  .float_break {
+    clear: both;
   }
 
   #footer_copyright {
