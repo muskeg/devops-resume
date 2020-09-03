@@ -14,7 +14,7 @@
   </div>
   <div id="content">
     <div id="content_intro">
-      <div id="intro_text">online CV, demo, portfolio and other collections</div>
+      <div id="intro_text">online CV, demo, &nbsp;&nbsp;portfolio and other &nbsp;&nbsp;&nbsp;collections</div>
     </div>     
     <div class="section" id="section-website">
       <a class="anchor" name="pipeline"></a>
@@ -44,9 +44,15 @@
           {{ section_pipeline_deploy|paragraphs|safe }}
         </div>
       </div>
+    </div>
+    <div class="section" id="section-raph">  
       <a class="anchor" name="raph"></a>
       <div class="section_text">
-        <h1>{{ section_raph_title }}</h1>
+        <h1>{{ section_raph_muskeg_title }}</h1>
+        <div id="raph_muskeg" class="content_text">
+          {{ section_raph_muskeg|paragraphs|safe }}
+        </div>
+        <h2>{{ section_raph_title }}</h2>
         <div id="raph_intro" class="content_text">
           <div id="raph_photo">
             <img id="raph_photo_img" src="{% static 'web/img/picture-rlanouet.jpg' %}" />
@@ -56,9 +62,6 @@
           </div>
         </div>
         <div class="float_break"></div>
-        <h2>{{ section_raph_muskeg_title }}</h2>
-        <div id="raph_muskeg" class="content_text">
-          {{ section_raph_muskeg|paragraphs|safe }}
       </div>
     </div>
   </div>
