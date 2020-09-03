@@ -141,6 +141,11 @@ a.anchor {
   color: #ffffff;
 }
 
+#raph_photo {
+  width: 80%;
+  margin: 2vh 2vw;
+}
+
 #footer {
   background-color: #0f0f0f;
   height: 100vh;
