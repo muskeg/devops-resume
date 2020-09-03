@@ -142,8 +142,12 @@ a.anchor {
 }
 
 #raph_photo {
-  width: 80%;
-  margin: 2vh 2vw;
+  width: 85vw;
+  margin: 2vh 0 2vh 0;
+}
+
+#raph_photo img {
+  width: 100%;
 }
 
 #footer {
@@ -194,10 +198,6 @@ a.anchor {
     width: 25vw;
     float: right;
     margin: 2vh 2vw;
-  }
-
-  #raph_photo img {
-    width: 100%;
   }
 
   .float_break {
