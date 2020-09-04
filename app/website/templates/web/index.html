@@ -24,7 +24,7 @@
         </div>
         <h2>{{ section_pipeline_subtitle }}</h2>
         <div id="pipeline_diagram">
-          <img id="pipeline_diagram_img" src="{% static 'web/img/pipeline-diagram.png' %}" />
+          <img id="pipeline_diagram_img" src="{% static 'web/img/pipeline-diagram.png' %}" alt="a diagram of the pipeline flow"/>
         </div>
         <div id="pipeline_pipeline" class="content_text">
           {{ section_pipeline_pipeline|paragraphs|safe }}
@@ -52,7 +52,7 @@
         <h2>{{ section_raph_title }}</h2>
         <div id="raph_intro" class="content_text">
           <div id="raph_photo">
-            <img id="raph_photo_img" src="{% static 'web/img/picture-rlanouet.jpg' %}" />
+            <img id="raph_photo_img" src="{% static 'web/img/picture-rlanouet.jpg' %}" alt="photo of me"/>
           </div>
           <div id="raph_intro_text">
             {{ section_raph_intro|paragraphs|safe }}
