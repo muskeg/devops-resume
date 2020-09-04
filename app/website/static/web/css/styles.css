@@ -25,7 +25,7 @@ h1 {
   font-variant: all-small-caps;	
   font-size: 4.5vw;
   margin: 3.5vh 0 1.5vh 0;
-  scroll-margin-top: 6vw;
+  scroll-margin-top: 16vw;
 }
 
 h2 {
@@ -164,6 +164,7 @@ h2 {
   h1 {
     font-size: 3.5vw;
     margin: 6vh 0 3vh 0;
+    scroll-margin-top: 6vw;
   }
 
   h2 {
