@@ -36,7 +36,7 @@ def index(request):
     I heard the Moment Factory call once again in 2019 where I was hired in a more senior position where I could have a larger influence on projects and infrastructure’s development. I also had the opportunity to work on a huge client’s project as a DevOps support/consultant where we implemented an Ansible pipeline for the deployment of proprietary software and services. As everybody in IT knows, 2020 brought up great challenges for the development of networking and remote work. This gave me the opportunity to configure and tests many firewall and VPN products and get more experience with VMware’s software-defined networking solutions.
     """
     section_raph_muskeg_title = "muskeg"
-    section_raph_muskeg = "The muskeg is where I grew up. It’s a type of terrain created by the accumulation of water and sediments on the near-surface bedrock preventing drainage. This type of terrain can be found all over Abitibi, my home region. I always loved the imagery of that rough terrain hard to navigate when you’re not used to it. About the improbable growth and hidden beauty amidst a hostile, acidic and almost permanently frozen environment."
+    section_raph_muskeg = "The muskeg is where I grew up. It’s a type of terrain created by the accumulation of water and sediments on the near-surface bedrock preventing drainage. This type of terrain can be found all over Abitibi, my home region. I always loved the imagery of that rough terrain hard to navigate when you’re not used to it. A terrain hiding depth and complexity under a seemingly calm and uneventful surface."
     section_project_title = "projects"
     section_projects_intro = "wip"
     # Content dictionnary
