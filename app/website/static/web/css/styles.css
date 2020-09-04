@@ -6,7 +6,7 @@ body {
   background-color: #0f0f0f;
   color: #f4f4f4;
   font-family: 'Hind', sans-serif;
-  font-size: 2.4 vw;
+  font-size: 2.4 w;
   background-image: url(../img/tanker_bg.jpg);
   background-repeat: no-repeat;
   background-position: top; 
@@ -148,8 +148,7 @@ a.anchor {
 }
 
 #raph_photo img {
-  height: 100%;
-  width: auto;
+  width: 100%;
 }
 
 #footer {
@@ -195,8 +194,6 @@ a.anchor {
   }
 
   #raph_photo {
-    /*background-color: #ffffff;
-    padding: 0.5%;*/
     width: 20vw;
     height: 20vw;
     float: right;
@@ -208,6 +205,8 @@ a.anchor {
 
   #raph_photo img {
     margin-left: -35%;
+    height: 100%;
+    width: auto;
   }
 
   .float_break {
