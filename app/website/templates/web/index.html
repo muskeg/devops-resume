@@ -17,10 +17,8 @@
       <div id="intro_text">online CV, demo, &nbsp;&nbsp;portfolio and other &nbsp;&nbsp;&nbsp;collections</div>
     </div>     
     <div class="section" id="section-website">
-      <a class="anchor" name="pipeline"></a>
-      <a class="anchor" name="projects"></a>
       <div class="section_text">
-        <h1>{{ section_pipeline_title }}</h1>
+        <h1 id="pipeline">{{ section_pipeline_title }}</h1>
         <div id="pipeline_intro" class="content_text">
           {{ section_pipeline_intro|paragraphs|safe }}
         </div>
@@ -46,9 +44,8 @@
       </div>
     </div>
     <div class="section" id="section-raph">  
-      <a class="anchor" name="raph"></a>
       <div class="section_text">
-        <h1>{{ section_raph_muskeg_title }}</h1>
+        <h1 id="raph">{{ section_raph_muskeg_title }}</h1>
         <div id="raph_muskeg" class="content_text">
           {{ section_raph_muskeg|paragraphs|safe }}
         </div>
@@ -62,6 +59,16 @@
           </div>
         </div>
         <div class="float_break"></div>
+      </div>
+    </div>
+    <div class="section" id="section-projects">  
+      <div class="section_text">
+        <h1 id="projects">{{ section_project_title }}</h1>
+        <div id="projects_intro" class="content_text">
+          <div id="projects_intro_text">
+            {{ section_projects_intro|paragraphs|safe }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
