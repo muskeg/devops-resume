@@ -38,7 +38,7 @@ def index(request):
     section_raph_muskeg_title = "muskeg"
     section_raph_muskeg = "The muskeg is where I grew up. It’s a type of terrain created by the accumulation of water and sediments on the near-surface bedrock preventing drainage. This type of terrain can be found all over Abitibi, my home region. I always loved the imagery of that rough terrain hard to navigate when you’re not used to it. A terrain hiding depth and complexity under a seemingly calm and uneventful surface."
     section_project_title = "projects"
-    section_projects_intro = "wip"
+    section_projects_intro = "More to come"
     # Content dictionnary
     content = {
         'section_pipeline_title': section_pipeline_title,
